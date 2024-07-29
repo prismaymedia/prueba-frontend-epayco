@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { QueryClient, QueryClientProvider, useQuery, useMutation, useQueryClient } from 'react-query';
+import ReactDOM from 'react-dom/client';
+import { QueryClient, QueryClientProvider, useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
@@ -50,28 +50,28 @@ const ItemList = ({ items }) => {
 };
 
 const Home = () => {
-  const { data: items, error, isLoading } = useItems();
-  const { register, handleSubmit, reset } = useForm();
-  const mutation = useAddItem();
+  // const { data: items, error, isLoading } = useItems();
+  // const { register, handleSubmit, reset } = useForm();
+  // const mutation = useAddItem();
 
-  const onSubmit = (data) => {
-    mutation.mutate(data);
-    reset();
-  };
+  // const onSubmit = (data) => {
+  //   mutation.mutate(data);
+  //   reset();
+  // };
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  // if (isLoading) return <div>Loading...</div>;
+  // if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div>
       <h1>Add New Item</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      {/* <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register('title')} placeholder="Title" required />
         <textarea {...register('body')} placeholder="Body" required />
         <button type="submit">Add Item</button>
       </form>
       <h2>Items List</h2>
-      <ItemList items={items} />
+      <ItemList items={items} /> */}
     </div>
   );
 };
@@ -86,9 +86,9 @@ const App = () => {
   );
 };
 
-ReactDOM.render(
+ReactDOM.createRoot( document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+ 
 );
