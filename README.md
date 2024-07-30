@@ -7,7 +7,7 @@ El objetivo de esta prueba es evaluar tu capacidad para estructurar y refactoriz
 ### Estilos y Maquetación
 
 - [x] Configura Tailwind CSS en el proyecto.
-- [ ] Agrega estilos básicos para mejorar la visualización de la aplicación.
+- [x] Agrega estilos básicos para mejorar la visualización de la aplicación.
 
 ### Refactor y Funcionalidad
 

@@ -7,9 +7,9 @@ export function Item ({ item }: ItemProps) {
   const { title, body } = item
 
   return (
-    <>
-      <Heading level="h3">{title}</Heading>
+    <article className="bg-gray-900 p-4 rounded-lg mb-4">
+      <Heading level="h3" className="text-xl font-semibold">{title}</Heading>
       <Paragraph>{body}</Paragraph>
-    </>
+    </article>
   )
 }
