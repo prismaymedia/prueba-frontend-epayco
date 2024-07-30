@@ -7,8 +7,9 @@ export function useAddItem () {
 
   return useMutation({
     mutationFn: addItem,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['items'] })
+    onSuccess: async (data) => {
+      await queryClient.cancelQueries({ queryKey: ['items'], exact: true })
+      queryClient.setQueryData(['items'], () => [data])
     }
   })
 }
