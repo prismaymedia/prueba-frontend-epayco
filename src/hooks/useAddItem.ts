@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
-import { addItem } from '../services/items'
+import { addItem } from 'services/items'
 
 export function useAddItem () {
   const queryClient = useQueryClient()

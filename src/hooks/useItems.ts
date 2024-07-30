@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { fetchItems } from '../services/items'
+import { fetchItems } from 'services/items'
 
 export function useItems () {
   return useQuery({

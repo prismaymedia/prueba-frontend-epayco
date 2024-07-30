@@ -1,7 +1,7 @@
 // import { useForm } from 'react-hook-form'
 
-import { useItems } from '../../hooks/useItems'
-import { ItemsProps, ItemProps } from '../../types'
+import { useItems } from 'hooks/useItems'
+import { ItemsProps, ItemProps } from 'types'
 // import { useAddItem } from '../../hooks/useAddItem'
 
 function Item ({ item }: ItemProps) {
