@@ -22,7 +22,7 @@ export function HomeLayout ({ items, error, isLoading, handleFormSubmit }: Reado
       </SectionContainer>
 
       <SectionContainer>
-        <Heading level="h2" className="text-xl font-bold mb-4">Items List</Heading>
+        <Heading level="h2" className="text-2xl font-bold mb-4">Items List</Heading>
         {isLoading && <Skeleton />}
         {error && <Alert type="error" message={error.message} />}
         {!isLoading && !error && <ItemList items={items} />}

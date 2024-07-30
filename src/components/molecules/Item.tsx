@@ -8,8 +8,8 @@ export function Item ({ item }: ItemProps) {
 
   return (
     <article className="bg-gray-900 p-4 rounded-lg mb-4">
-      <Heading level="h3" className="text-xl font-semibold">{title}</Heading>
-      <Paragraph>{body}</Paragraph>
+      <Heading level="h3" className="text-xl font-semibold mb-3">{title}</Heading>
+      <Paragraph className="text-gray-300">{body}</Paragraph>
     </article>
   )
 }
