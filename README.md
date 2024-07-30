@@ -11,8 +11,8 @@ El objetivo de esta prueba es evaluar tu capacidad para estructurar y refactoriz
 
 ### Refactor y Funcionalidad
 
-- [ ] Reubica los componentes siguiendo el patrón de Atomic Design.
-- [ ] Agrega tipos utilizando TypeScript y separa la lógica de la presentación siguiendo un patrón de Clean Architecture.
+- [x] Reubica los componentes siguiendo el patrón de Atomic Design.
+- [x] Agrega tipos utilizando TypeScript y separa la lógica de la presentación siguiendo un patrón de Clean Architecture.
 - [x] Al agregar un nuevo ítem, este debe ser el único listado en la pantalla.
 - [x] Agrega validaciones al formulario de adición de ítems.
 
