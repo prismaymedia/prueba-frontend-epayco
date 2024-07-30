@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> { }
 
-export function Input (props: Readonly<InputProps>) {
-  return <input {...props} />
-}
+export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  return <input {...props} ref={ref} />
+})

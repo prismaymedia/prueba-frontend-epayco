@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> { }
+interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> { }
 
-export function TextArea (props: Readonly<TextAreaProps>) {
-  return <textarea {...props} />
-}
+export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
+  return <textarea {...props} ref={ref} />
+})
