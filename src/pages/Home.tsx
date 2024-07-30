@@ -1,19 +1,17 @@
-// import { useForm } from 'react-hook-form'
-
 import { Heading } from 'components/atoms/Heading'
 import { ItemList } from 'components/organisms/ItemList'
 import { useItems } from 'hooks/useItems'
-// import { useAddItem } from '../../hooks/useAddItem'
+import { useAddItem } from 'hooks/useAddItem'
+import { Form } from 'components/molecules/Form'
+import { NewItem } from 'types'
 
 export function Home () {
   const { data: items, error, isLoading } = useItems()
-  // const { register, handleSubmit, reset } = useForm()
-  // const mutation = useAddItem()
+  const { mutate } = useAddItem()
 
-  // const onSubmit = (data) => {
-  //   mutation.mutate(data)
-  //   reset()
-  // }
+  const onSubmit = (data: NewItem) => {
+    mutate(data)
+  }
 
   if (isLoading) return <div>Loading...</div>
   if (error) return <div>Error: {error.message}</div>
@@ -21,11 +19,7 @@ export function Home () {
   return (
     <main>
       <Heading level="h1">Add New Item</Heading>
-      {/* <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register('title')} placeholder="Title" required />
-        <textarea {...register('body')} placeholder="Body" required />
-        <button type="submit">Add Item</button>
-      </form> */}
+      <Form onSubmit={onSubmit} />
       <Heading level="h2">Items List</Heading>
       <ItemList items={items} />
     </main>
