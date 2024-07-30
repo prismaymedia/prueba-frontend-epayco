@@ -1,10 +1,10 @@
 export interface BaseItem {
-  title: string;
-  body: string;
+  title: string
+  body: string
 }
 export interface Item extends BaseItem {
-  userId: number;
-  id: number;
+  userId: number
+  id: number
 }
 
 export interface NewItem extends BaseItem {
@@ -16,5 +16,13 @@ export type ResponseItems = {
 }
 
 export type ResponseItem = {
- data: Item
+  data: Item
+}
+
+export type ItemsProps = {
+  items?: Item[]
+}
+
+export type ItemProps = {
+  item: Item
 }
