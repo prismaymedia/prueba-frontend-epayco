@@ -26,3 +26,7 @@ export type ItemsProps = {
 export type ItemProps = {
   item: Item
 }
+
+interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
+  handleFormSubmit: (data: NewItem) => void;
+}

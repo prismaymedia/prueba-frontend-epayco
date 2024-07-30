@@ -4,11 +4,7 @@ import { Input } from 'components/atoms/Input'
 import { TextArea } from 'components/atoms/TextArea'
 import { Button } from 'components/atoms/Button'
 import { Paragraph } from 'components/atoms/Paragraph'
-import { NewItem } from 'types'
-
-interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
-  handleFormSubmit: (data: NewItem) => void;
-}
+import { NewItem, FormProps } from 'types'
 
 export function Form ({ handleFormSubmit, ...props }: Readonly<FormProps>) {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<NewItem>()
@@ -29,7 +25,7 @@ export function Form ({ handleFormSubmit, ...props }: Readonly<FormProps>) {
         placeholder="User ID"
         name="userId"
       />
-      {errors.userId && <Paragraph className='text-red-600'>{`⚠ ${errors.userId.message}`}</Paragraph>}
+      {errors.userId && <Paragraph className='text-red-400'>{`⚠ ${errors.userId.message}`}</Paragraph>}
 
       <Input
         {...register('title', {
@@ -38,7 +34,7 @@ export function Form ({ handleFormSubmit, ...props }: Readonly<FormProps>) {
         placeholder="Title"
         name="title"
       />
-      {errors.title && <Paragraph className='text-red-600'>{`⚠ ${errors.title.message}`}</Paragraph>}
+      {errors.title && <Paragraph className='text-red-400'>{`⚠ ${errors.title.message}`}</Paragraph>}
 
       <TextArea
         {...register('body', {
@@ -48,7 +44,7 @@ export function Form ({ handleFormSubmit, ...props }: Readonly<FormProps>) {
         name="body"
         className='size-80 max-lg:size-52'
       />
-      {errors.body && <Paragraph className='text-red-600'>{`⚠ ${errors.body.message}`}</Paragraph>}
+      {errors.body && <Paragraph className='text-red-400'>{`⚠ ${errors.body.message}`}</Paragraph>}
 
       <Button
         type="submit"
