@@ -1,29 +1,11 @@
 // import { useForm } from 'react-hook-form'
 
+import { Heading } from 'components/atoms/Heading'
+import { ItemList } from 'components/organisms/ItemList'
 import { useItems } from 'hooks/useItems'
-import { ItemsProps, ItemProps } from 'types'
 // import { useAddItem } from '../../hooks/useAddItem'
 
-function Item ({ item }: ItemProps) {
-  return (
-    <div>
-      <h3>{item.title}</h3>
-      <p>{item.body}</p>
-    </div>
-  )
-}
-
-function ItemList({ items }: ItemsProps) {
-  return (
-    <div>
-      {items?.map((item) => (
-        <Item key={item.id} item={item} />
-      ))}
-    </div>
-  )
-}
-
-export function Home() {
+export function Home () {
   const { data: items, error, isLoading } = useItems()
   // const { register, handleSubmit, reset } = useForm()
   // const mutation = useAddItem()
@@ -37,15 +19,15 @@ export function Home() {
   if (error) return <div>Error: {error.message}</div>
 
   return (
-    <div>
-      <h1>Add New Item</h1>
+    <main>
+      <Heading level="h1">Add New Item</Heading>
       {/* <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register('title')} placeholder="Title" required />
         <textarea {...register('body')} placeholder="Body" required />
         <button type="submit">Add Item</button>
       </form> */}
-      <h2>Items List</h2>
+      <Heading level="h2">Items List</Heading>
       <ItemList items={items} />
-    </div>
+    </main>
   )
 }
