@@ -5,18 +5,19 @@ import { NewItem } from 'types'
 
 export function Home () {
   const { data: items, error, isLoading } = useItems()
-  const { mutate } = useAddItem()
+  const { mutate, error: errorMutation } = useAddItem()
 
   const handleFormSubmit = (data: NewItem) => {
     mutate(data)
   }
 
   return (
-    <HomeLayout 
-      items={items} 
-      error={error} 
-      isLoading={isLoading} 
-      handleFormSubmit={handleFormSubmit} 
+    <HomeLayout
+      items={items}
+      error={error}
+      isLoading={isLoading}
+      errorMutation={errorMutation}
+      handleFormSubmit={handleFormSubmit}
     />
   )
 }
