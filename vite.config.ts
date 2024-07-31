@@ -9,5 +9,9 @@ export default defineConfig({
   test: {
     environment: 'happy-dom',
     setupFiles: ['./vitest.setup.ts'],
+    coverage: {
+      include: ['src/**/*.{js,ts,jsx,tsx}'],
+      exclude: ['src/main.tsx', 'src/app.tsx']
+    }
   }
 })
