@@ -5,6 +5,7 @@ export interface BaseItem {
 export interface Item extends BaseItem {
   userId: number
   id: number
+  isLoading?: boolean
 }
 
 export interface NewItem extends BaseItem {
