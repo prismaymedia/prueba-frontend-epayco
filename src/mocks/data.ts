@@ -25,3 +25,9 @@ export const ITEM = {
   title: '1984',
   body: '1984 is a dystopian social science fiction novel by English novelist George Orwell.',
 }
+
+export const NEW_ITEM = {
+  userId: 2,
+  title: '1984',
+  body: '1984 is a dystopian social science fiction novel by English novelist George Orwell.',
+}
