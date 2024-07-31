@@ -25,8 +25,5 @@ export function useAddItem () {
     onError: (_error, _variables, context) => {
       queryClient.setQueryData(['items'], context?.previousItems)
     },
-    onSettled: async () => {
-      await queryClient.invalidateQueries({ queryKey: ['items'] })
-    }
   })
 }
