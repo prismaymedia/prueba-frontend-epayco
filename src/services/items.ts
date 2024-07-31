@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { Item, ResponseItem, ResponseItems, NewItem } from 'types';
 
-const API_URL = 'https://jsonplaceholder.typicode.com/posts';
+import { API_URL_JSON_PLACE_HOLDER } from '../constants';
+import { Item, ResponseItem, ResponseItems, NewItem } from 'types';
 
 export async function fetchItems (): Promise<Item[]> {
   try {
-    const { data }: ResponseItems = await axios.get(API_URL)
+    const { data }: ResponseItems = await axios.get(API_URL_JSON_PLACE_HOLDER)
 
     return data.map((item: Item) => {
       const { id, userId, title, body } = item
@@ -28,7 +28,7 @@ export async function fetchItems (): Promise<Item[]> {
 
 export async function addItem (newItem: NewItem): Promise<Item> {
   try {
-    const { data }: ResponseItem = await axios.post(API_URL, newItem)
+    const { data }: ResponseItem = await axios.post(API_URL_JSON_PLACE_HOLDER, newItem)
     const { id, userId, title, body } = data
 
     return {
