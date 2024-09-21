@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @apply bg-sky-50;
+    @apply font-sans;
+    @apply text-gray-600;
+}
+
+input {
+    @apply outline-none;
+}
+
+textarea {
+    @apply outline-none;
+}
