@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home {
+    @apply grid grid-cols-1 md:grid-cols-[1fr_2fr] h-screen; 
+}
+
+.home__container {
+    @apply bg-background p-6 rounded-lg shadow-md flex flex-col items-center;  
+}
+
+.home__title {
+    @apply text-2xl font-bold text-text mb-4;  
+}
+
+.home__form {
+    @apply flex flex-col w-full max-w-md mx-auto gap-2;  
+}
+
+.home__input {
+    @apply bg-white border border-gray-300 rounded-md p-2  focus:outline-none focus:ring-2 focus:ring-primary;  
+}
+
+.home__textarea {
+    @apply bg-white border border-gray-300 rounded-md p-2  focus:outline-none focus:ring-2 focus:ring-primary;  
+}
+
+.home__button {
+    @apply bg-primary text-white rounded-md px-4 py-2 hover:bg-blue-700 transition duration-200;  
+}
+
+.home__list {
+    @apply bg-background p-4 overflow-y-auto h-full rounded-lg shadow-md;  
+}
+
+.home__list__title {
+    @apply text-xl font-bold text-text mb-2;  
+}
+
+.home__list__card {
+    @apply bg-white rounded-lg shadow-md p-4 mb-4 transition-transform transform hover:scale-105 m-[20px]; 
+}
+
+.home__card__title {
+    @apply font-bold text-lg text-text mb-2;
+}
