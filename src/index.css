@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button {
+  @apply mt-4 px-16 text-[#407076] bg-white font-medium rounded-full text-sm py-2.5 text-center mr-2 mb-2 cursor-pointer;
+}
+
+.button--hover:hover {
+  @apply hover:bg-[#407076] hover:text-white;
+}
+
+.button--disabled:disabled {
+  @apply disabled:bg-[#90908e] disabled:text-white cursor-auto;
+}
+
+.label {
+  @apply block mb-2 font-medium text-gray-900 dark:text-white;
+}
+
+.input {
+  @apply bg-gray-50 border mt-2.5 border-gray-300 outline-0 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+}
+
+.input--error {
+  @apply border-2 border-red-500 text-red-900 text-sm rounded-lg;
+}
+
+.input__error {
+  @apply border-red-500 text-red-900 text-sm;
+}
+
+.textarea {
+  @apply resize-none h-52 block mt-2.5 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500;
+}
+
+.textarea--error {
+  @apply border-2 border-red-500 text-red-900 text-sm rounded-lg;
+}
+
+.textarea__error {
+  @apply border-red-500 text-red-900 text-sm;
+}
+
+.item {
+  @apply block max-w-sm min-w-96 p-6 bg-white border border-gray-200 rounded-lg shadow;
+}
+
+.item__title {
+  @apply mb-2 text-center text-2xl font-bold tracking-tight text-gray-900;
+}
+
+.item__body {
+  @apply font-normal text-gray-700 break-words;
+}
+
+.item-list {
+  @apply flex justify-center gap-8 flex-wrap
+}
+
+.title {
+  @apply text-3xl text-center font-medium;
+}
+
+.form {
+  @apply flex flex-col max-w-xl px-4 w-96 min-w-52;
+}
+
+.home__container {
+  @apply lg:grid h-screen lg:grid-cols-5 lg:overflow-y-hidden;
+}
+
+.home__header {
+  @apply grid justify-center lg:col-span-2 lg:place-content-center p-8 bg-[#5aa2ab];
+}
+
+.home__body {
+  @apply lg:col-span-3 p-8 bg-white lg:overflow-auto;
+}
+
+.message-loading {
+  @apply text-center text-2xl font-medium text-gray-700;
+}
+
+.message-error {
+  @apply text-center text-2xl font-medium text-gray-700;
+}
