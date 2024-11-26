@@ -1,0 +1,34 @@
+/* Importacion Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fuentes */
+@layer base {
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Roboto.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/fonts/Roboto-Bold.ttf") format("truetype");
+  }
+}
+
+/* estilos globales */
+body {
+  font-family: "Roboto", sans-serif;
+}
