@@ -1,0 +1,7 @@
+.field_container {
+  @apply mb-4;
+}
+
+.error {
+  @apply text-red-500 text-sm mt-1;
+}

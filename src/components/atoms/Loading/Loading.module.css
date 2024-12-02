@@ -1,0 +1,7 @@
+.loading_container {
+  @apply flex justify-center items-center h-screen;
+}
+
+.loader {
+  @apply rounded-full h-20 w-20 bg-cyan-800 animate-ping;
+}

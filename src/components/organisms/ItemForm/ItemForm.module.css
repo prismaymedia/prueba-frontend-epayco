@@ -1,0 +1,15 @@
+.form_contend {
+  @apply p-6 bg-gray-100 rounded-md shadow-md w-full max-w-lg mx-auto;
+}
+
+.form_actions {
+  @apply mt-6 flex justify-end gap-4;
+}
+
+.form_title {
+  @apply p-4 bg-cyan-600 text-white text-3xl text-center rounded-t-md;
+}
+
+.form_container {
+  @apply mt-10 max-w-lg m-auto;
+}

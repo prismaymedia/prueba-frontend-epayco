@@ -1,0 +1,19 @@
+.input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent transition;
+}
+
+.disabled {
+  @apply bg-gray-100 cursor-not-allowed;
+}
+
+.input_container {
+  @apply relative;
+}
+
+.error_input {
+  @apply border-red-500;
+}
+
+.error_message {
+  @apply mt-1 text-red-500 text-sm;
+}

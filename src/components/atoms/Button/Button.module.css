@@ -1,0 +1,19 @@
+.button {
+  @apply px-4 py-2 font-medium rounded-md transition-colors duration-300;
+}
+
+.primary {
+  @apply bg-cyan-600 text-white hover:bg-cyan-700 disabled:bg-cyan-400;
+}
+
+.secondary {
+  @apply bg-gray-500 text-white hover:bg-gray-600 disabled:bg-gray-300;
+}
+
+.danger {
+  @apply bg-red-500 text-white hover:bg-red-600 disabled:bg-red-300;
+}
+
+.disabled {
+  @apply cursor-not-allowed;
+}
