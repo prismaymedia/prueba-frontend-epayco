@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useItems, useAddItem } from "../services/api";
-import { Form } from "../components/molecules/Form";
+import { Form } from "../components/organisms/Form";
 import { ItemList } from "../components/organisms/ItemList";
 import { Loading } from "../components/atoms/Loading";
 import { ErrorMessage } from "../components/atoms/ErrorMessage";
