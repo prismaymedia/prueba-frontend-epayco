@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 import { QueryClient, QueryClientProvider, useQuery, useMutation, useQueryClient } from 'react-query';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
@@ -63,7 +64,7 @@ const Home = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
+    <div className="bg-blue-500 min-h-screen p-4">
       <h1>Add New Item</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register('title')} placeholder="Title" required />
