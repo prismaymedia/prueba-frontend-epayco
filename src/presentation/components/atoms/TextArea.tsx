@@ -7,5 +7,3 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return <textarea ref={ref} className={`border p-2 w-full ${className}`} {...props} />;
   }
 );
-
-TextArea.displayName = 'TextArea';
