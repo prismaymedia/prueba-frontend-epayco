@@ -1,13 +1,7 @@
 import React from 'react';
-
-export type ItemType = {
-  id: number;
-  title: string;
-  body: string;
-};
-
+import { Item } from '../../../../domain/models/item';
 interface ItemProps {
-  item: ItemType;
+  item: Item;
 }
 
 export const ItemCard: React.FC<ItemProps> = ({ item }) => {
