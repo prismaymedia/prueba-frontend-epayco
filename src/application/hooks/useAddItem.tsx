@@ -1,10 +1,11 @@
-// src/hooks/useAddItem.ts
 import { useMutation, useQueryClient } from 'react-query';
-import { addItem } from '../services/itemServices';
+import { addItemToApi } from '../../infrastructure/repositories/itemRepository';
 
 export const useAddItem = () => {
+  
   const queryClient = useQueryClient();
-  return useMutation(addItem, {
+
+  return useMutation(addItemToApi, {
     onSuccess: () => {
       queryClient.invalidateQueries('items');
     },
