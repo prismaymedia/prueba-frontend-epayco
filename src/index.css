@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.card {
+    @apply flex flex-col gap-2 bg-neutral-100 hover:bg-neutral-200 transition-all duration-300 rounded-md p-4 cursor-pointer;
+}
+
+.btn-primary {
+    @apply bg-neutral-900 text-white text-sm rounded-full py-2 px-4 hover:opacity-80 transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.title-section {
+    @apply text-xs font-bold uppercase text-neutral-600;
+}
