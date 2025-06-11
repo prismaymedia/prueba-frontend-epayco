@@ -38,6 +38,7 @@ This includes:
 - Custom hooks for state management
 - Presentation Layer: UI components organized by Atomic Design
 
+```
 src/components/
 ├── atoms/          # Basic components
 │   ├── Button.tsx
@@ -53,6 +54,7 @@ src/components/
 │   └── MainLayout.tsx
 └── pages/          # Complete pages
     └── Home.tsx
+```
 
 ## Key Technical Decisions
 
