@@ -1,0 +1,160 @@
+html {
+  @apply scroll-smooth text-balance;
+}
+
+body {
+  @apply relative min-h-screen bg-gray-50 font-sans text-base leading-normal text-slate-800;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+label,
+a {
+  @apply font-sans;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply leading-tight;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-bold;
+}
+
+h4,
+h5,
+h6 {
+  @apply font-semibold;
+}
+
+h1 {
+  font-size: 2.25em;
+}
+
+h2 {
+  font-size: 1.875em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1.125em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.75em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.375em;
+  }
+
+  h4 {
+    font-size: 1.25em;
+  }
+
+  h5 {
+    font-size: 1.125em;
+  }
+}
+
+img {
+  @apply h-auto w-fit max-w-full;
+}
+
+svg {
+  @apply h-auto;
+}
+
+.svg-inline--fa {
+  @apply w-auto;
+}
+
+.wrapper {
+  @apply flex min-h-screen flex-col;
+}
+
+main {
+  @apply flex flex-1 flex-col bg-zinc-50;
+}
+
+.container {
+  @apply mx-auto w-11/12 max-w-[1440px];
+}
+
+.DraftEditor-root {
+  font-family: "Rubik", sans-serif;
+  font-size: inherit;
+}
+
+.loading-wrapper {
+  @apply min-h-screen flex flex-col items-center justify-center;
+}
+
+.vertical-scroll {
+  &::-webkit-scrollbar {
+    @apply w-1 rounded-md;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply bg-slate-200/20;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-secondary-300/50 rounded-xl transition-all duration-300 ease-in-out;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary-500/50;
+  }
+}
+
+.horizontal-scroll {
+  &::-webkit-scrollbar {
+    @apply h-1 rounded-md;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply bg-slate-200/20;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-primary-300/50 rounded-xl transition-all duration-300 ease-in-out;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500/50;
+  }
+}

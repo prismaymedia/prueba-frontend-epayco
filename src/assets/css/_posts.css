@@ -1,0 +1,20 @@
+.posts-wrapper {
+  @apply min-h-44 max-h-140 overflow-y-auto;
+}
+
+.posts-inner-wrapper {
+  @apply flex flex-col gap-6 p-8;
+}
+
+.post-card {
+  @apply bg-white p-6 rounded-lg shadow-sm hover:shadow-lg hover:scale-105 hover:z-10 transition-all duration-200;
+  .post-card-content {
+
+    .post-card-title {
+      @apply mb-2 text-xl font-semibold text-primary-800;
+    }
+    .post-card-body {
+      @apply text-gray-700;
+    }
+  }
+}

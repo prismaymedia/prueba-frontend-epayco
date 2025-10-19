@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @import "./css/_global.css";
+  @import "./css/_form.css";
+  @import "./css/_posts.css";
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-primary: #2E5AAC;
+  --color-primary-50: #f0f8fe;
+  --color-primary-100: #deedfb;
+  --color-primary-200: #c5e2f8;
+  --color-primary-300: #9dd0f3;
+  --color-primary-400: #6eb4ec;
+  --color-primary-500: #4c98e5;
+  --color-primary-600: #377dd9;
+  --color-primary-700: #2e68c7;
+  --color-primary-800: #2e5aac;
+  --color-primary-900: #284980;
+  --color-primary-950: #1d2e4e;
+
+
+  --color-secondary: #0FA3B1;
+  --color-secondary-50: #edfefd;
+  --color-secondary-100: #d1fcfa;
+  --color-secondary-200: #a8f9f9;
+  --color-secondary-300: #6df2f3;
+  --color-secondary-400: #2ae1e6;
+  --color-secondary-500: #0ec4cc;
+  --color-secondary-600: #0fa3b1;
+  --color-secondary-700: #137e8b;
+  --color-secondary-800: #196571;
+  --color-secondary-900: #195560;
+  --color-secondary-950: #0a3842;
+
+  --color-tertiary: #F49D37;
+  --color-tertiary-50: #fef8ec;
+  --color-tertiary-100: #fce9c9;
+  --color-tertiary-200: #f9d18e;
+  --color-tertiary-300: #f6b253;
+  --color-tertiary-400: #f49d37;
+  --color-tertiary-500: #ed7413;
+  --color-tertiary-600: #d2520d;
+  --color-tertiary-700: #ae370f;
+  --color-tertiary-800: #8d2b13;
+  --color-tertiary-900: #742413;
+  --color-tertiary-950: #431005;
+}
