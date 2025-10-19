@@ -1,0 +1,3 @@
+.form {
+  @apply bg-white p-8 rounded-lg flex flex-col gap-5;
+}
