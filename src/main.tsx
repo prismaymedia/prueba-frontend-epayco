@@ -1,36 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { QueryClient, QueryClientProvider, useQuery, useMutation, useQueryClient } from 'react-query';
+import { QueryClient, QueryClientProvider, useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import './index.css'
 
 const fetchItems = async () => {
   const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
   return response.data;
 };
 
-const addItem = async (newItem) => {
+const addItem = async (newItem: any) => {
   const response = await axios.post('https://jsonplaceholder.typicode.com/posts', newItem);
   return response.data;
 };
 
 const useItems = () => {
-  return useQuery('items', fetchItems, {
+  return useQuery({
+    queryKey: ['items'],
+    queryFn: fetchItems,
     staleTime: 1000 * 60 * 5,
-    cacheTime: 1000 * 60 * 10,
+    gcTime: 1000 * 60 * 10,
   });
 };
 
 const useAddItem = () => {
   const queryClient = useQueryClient();
-  return useMutation(addItem, {
+  return useMutation({
+    mutationFn: addItem,
     onSuccess: () => {
-      queryClient.invalidateQueries('items');
+      queryClient.invalidateQueries({ queryKey: ['items'] });
     },
   });
 };
 
-const Item = ({ item }) => {
+const Item = ({ item }: { item: any }) => {
   return (
     <div>
       <h3>{item.title}</h3>
@@ -39,7 +43,7 @@ const Item = ({ item }) => {
   );
 };
 
-const ItemList = ({ items }) => {
+const ItemList = ({ items }: { items: any[] }) => {
   return (
     <div>
       {items.map(item => (
@@ -63,8 +67,8 @@ const Home = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
-      <h1>Add New Item</h1>
+    <div className="bg-gray-100 p-4">
+      <h1 className="text-2xl font-bold">Add New Item</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register('title')} placeholder="Title" required />
         <textarea {...register('body')} placeholder="Body" required />
