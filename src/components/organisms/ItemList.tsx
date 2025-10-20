@@ -19,7 +19,7 @@ export const ItemList: React.FC<ItemListProps> = ({ items, isLoading, error }) =
         animate={{ opacity: 1 }}
       >
         <motion.div
-          animate={{ rotate: 360 }}
+          animate={{ rotate: 5 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
         >
           <Loader2 className="w-16 h-16 text-purple-600 dark:text-purple-400" />

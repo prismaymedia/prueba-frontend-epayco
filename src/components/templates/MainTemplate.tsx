@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Sparkles } from 'lucide-react';
 import { ThemeToggle } from '../atoms';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context';
 
 interface MainTemplateProps {
   children: React.ReactNode;
