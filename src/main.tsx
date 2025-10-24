@@ -1,94 +1,72 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { QueryClient, QueryClientProvider, useQuery, useMutation, useQueryClient } from 'react-query';
-import axios from 'axios';
-import { useForm } from 'react-hook-form';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import './index.css';
 
-const fetchItems = async () => {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-  return response.data;
-};
+// Domain Layer
+import { GetPostsUseCase } from './domain/useCases/GetPosts.useCase';
+import { AddPostUseCase } from './domain/useCases/AddPost.useCase';
 
-const addItem = async (newItem) => {
-  const response = await axios.post('https://jsonplaceholder.typicode.com/posts', newItem);
-  return response.data;
-};
+// Data Layer
+import { PostApiDataSource } from './data/dataSources/PostApiDataSource';
+import { PostRepositoryImpl } from './data/repositories/PostRepository.impl';
+import { QUERY_CONFIG } from './data/config/api.config';
 
-const useItems = () => {
-  return useQuery('items', fetchItems, {
-    staleTime: 1000 * 60 * 5,
-    cacheTime: 1000 * 60 * 10,
-  });
-};
+// Presentation Layer
+import { HomePage } from './presentation/components/pages/HomePage/HomePage';
+import { ToastProvider } from './presentation/context/ToastContext';
 
-const useAddItem = () => {
-  const queryClient = useQueryClient();
-  return useMutation(addItem, {
-    onSuccess: () => {
-      queryClient.invalidateQueries('items');
+/**
+ * Configuración de React Query
+ */
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: QUERY_CONFIG.STALE_TIME,
+      cacheTime: QUERY_CONFIG.CACHE_TIME,
+      retry: QUERY_CONFIG.RETRY,
+      retryDelay: QUERY_CONFIG.RETRY_DELAY,
+      refetchOnWindowFocus: false,
     },
-  });
-};
+  },
+});
 
-const Item = ({ item }) => {
-  return (
-    <div>
-      <h3>{item.title}</h3>
-      <p>{item.body}</p>
-    </div>
-  );
-};
+/**
+ * Inyección de Dependencias
+ * Creamos las instancias de las capas siguiendo Clean Architecture
+ */
+// Data Source
+const postDataSource = new PostApiDataSource();
 
-const ItemList = ({ items }) => {
-  return (
-    <div>
-      {items.map(item => (
-        <Item key={item.id} item={item} />
-      ))}
-    </div>
-  );
-};
+// Repository
+const postRepository = new PostRepositoryImpl(postDataSource);
 
-const Home = () => {
-  const { data: items, error, isLoading } = useItems();
-  const { register, handleSubmit, reset } = useForm();
-  const mutation = useAddItem();
+// Use Cases
+const getPostsUseCase = new GetPostsUseCase(postRepository);
+const addPostUseCase = new AddPostUseCase(postRepository);
 
-  const onSubmit = (data) => {
-    mutation.mutate(data);
-    reset();
-  };
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-
-  return (
-    <div>
-      <h1>Add New Item</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register('title')} placeholder="Title" required />
-        <textarea {...register('body')} placeholder="Body" required />
-        <button type="submit">Add Item</button>
-      </form>
-      <h2>Items List</h2>
-      <ItemList items={items} />
-    </div>
-  );
-};
-
-const queryClient = new QueryClient();
-
+/**
+ * App Component
+ */
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Home />
+      <ToastProvider>
+        <HomePage
+          getPostsUseCase={getPostsUseCase}
+          addPostUseCase={addPostUseCase}
+        />
+      </ToastProvider>
     </QueryClientProvider>
   );
 };
 
-ReactDOM.render(
-  <React.StrictMode>
+/**
+ * Renderizado con React 18 API
+ */
+const root = createRoot(document.getElementById('root')!);
+root.render(
+  <StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </StrictMode>
 );
