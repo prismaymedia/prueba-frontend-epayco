@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body { @apply bg-gradient-to-br from-slate-50 to-slate-200 text-slate-800 antialiased; }
+}
+
+@layer components {
+  .card { @apply bg-white rounded-xl shadow-sm ring-1 ring-slate-200; }
+  .section-title { @apply text-xl font-semibold mb-2; }
+}
+
+
